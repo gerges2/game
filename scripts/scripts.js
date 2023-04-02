@@ -1,5 +1,12 @@
+// Action for Start Screen
+// span button
+document.querySelector(".start-btn span").onclick = function (){
+    document.querySelector(".start-btn").remove();
+}
+
 // Get canvas element
 const canvas = document.getElementById("myCanvas");
+// <<<<<<< HEAD
 const fps =60;
 const playerHeight=20;
 const playerWidth=100;
@@ -35,3 +42,6 @@ const player1 ={
             rander();
         }
         setInterval(game,1000/fps)
+// =======
+
+// >>>>>>> 0f58650ad151e685c6691f0a627fe22fd93d2245
