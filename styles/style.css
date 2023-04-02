@@ -4,8 +4,8 @@
 }
 /* Start Canvas */
 #myCanvas{
-    width: 100%;
-    height: 700px;
+    /* width: 100%; */
+    /* height: 700px;  */
     background-image: url("../images/bg.jpg");
     background-size: cover;
     display: block;
