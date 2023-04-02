@@ -18,7 +18,6 @@ const player1 ={
         score:0
     }
     function rander(){
-    canvas.style.backgroundImage ="url('../images/bg.jpg')"
     ctx.reset();
     drawrect(player1.x,player1.y,player1.width,player1.height,player1.color)
     }
@@ -26,9 +25,7 @@ const player1 ={
     function update(){
             canvas.addEventListener("mousemove",function(e){
             let rect =canvas.getBoundingClientRect();
-            if (e.clientX-rect.left<250){
-                player1.x=e.clientX-rect.left
-            }
+            if (e.clientX-rect.left<97){}
             else{
             player1.x=e.clientX-rect.left-(player1.width);}                        
         })//height of player is 100  
@@ -37,4 +34,4 @@ const player1 ={
             update();
             rander();
         }
-        setInterval(game,1000)
+        setInterval(game,1000/fps)
