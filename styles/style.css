@@ -21,8 +21,9 @@ body{
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
   width: 70%;
+  transform: translate(-50%, -50%);
+  /* width: 70%; */
   background-image: url("../images/bg.jpg");
   background-size: cover;
   display: block;
@@ -40,7 +41,6 @@ body{
   height: 100%;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.9);
-  
 }
 .start-btn span{
   text-transform: uppercase;
@@ -55,12 +55,17 @@ body{
   font-size: 22px;
   text-align: center;
   cursor: pointer;
+  /* span button style */
+  text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.55), 0 0 0.5em currentColor;
+	box-shadow: inset 0 0 0.5em 0 var(--color-shadow), 0 0 0.5em 0 var(--color-shadow);
+
 }
 .start-btn span:hover{
   color: white;
   background: var(--color-shadow);
   transition: 0.4s;
-  box-shadow: 0 0 5px var(--color-shadow), 0 0 25px  var(--color-shadow), 0 0 50px  var(--color-shadow), 0 0 100px  var(--color-shadow);
+  /* span buttuon hover style */
+  box-shadow: inset 0 0 5px var(--color-shadow), 0 0 25px  var(--color-shadow), 0 0 50px  var(--color-shadow), 0 0 100px  var(--color-shadow);
   cursor: pointer;
 }
 /* End First Screen */
