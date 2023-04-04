@@ -47,4 +47,14 @@ const player1 ={
         setInterval(game,1000/fps)
 // =======
 
+// <<<<<<< HEAD
 // >>>>>>> 0f58650ad151e685c6691f0a627fe22fd93d2245
+// =======
+//Resizing Canvas
+window.addEventListener('resize', resizeCanvas, false);
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+// >>>>>>> e76386f379068f45cd5c719c82c7d094907653af
