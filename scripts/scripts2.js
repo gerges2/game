@@ -2,26 +2,17 @@
 // span button
 document.querySelector(".start-btn span").onclick = function (){
     document.querySelector(".start-btn").remove();
-}
-
+}// to delete button
 // Get canvas element
 const canvas = document.getElementById("myCanvas");
-// <<<<<<< HEAD
 // global variable for frams and paddle 
 const fps =60;
+const ballRadias = 8;
 const playerHeight=10;
 const playerWidth=100;
+let leftArrow = false;// for arror button
+let rightArrow = false;//for arror button 
 const ctx =canvas.getContext("2d");
-// to draw the paddle
-function drawrect(x,y,w,h,color){
-    ctx.fillStyle = color;
-    ctx.fillRect(x,y,w,h)
-}
-
-
-
-
-
 //opject of paddle 
 const player1 ={
         x:canvas.width/2-playerWidth/2,
@@ -32,10 +23,7 @@ const player1 ={
         score:0,
         dx:5
     }
-
-
-    const ballRadias = 8;
-    // // ball attributes
+    // ball attributes
     const ball = {
         x: canvas.width,
         y: player1.y-ballRadias,
@@ -52,9 +40,7 @@ const player1 ={
     ball.dy = -2
     }
 
-
-
-    var count = 3;
+    var count = 3;//number of lifes
     // collision ball with wall
     function ballWallCollision() {
         if (ball.x + ball.radius > canvas.width || ball.x - ball.radius < 0) {
@@ -68,7 +54,6 @@ const player1 ={
             resetBall();// to return ball up paddle 
         }
     }
-
 // collision ball with paddle
 function ballPaddleCollision() {
     if (ball.y > player1.y && ball.y < player1.y + player1.height
@@ -82,8 +67,11 @@ function ballPaddleCollision() {
 
     }
 }
-
-
+// to draw the paddle
+function drawrect(x,y,w,h,color){
+    ctx.fillStyle = color;
+    ctx.fillRect(x,y,w,h)
+}
     // // draw ball
     function drawBall() {
         ctx.beginPath();
@@ -97,13 +85,6 @@ function ballPaddleCollision() {
         ball.x += ball.dx
         ball.y += ball.dy
     }
-
-
-
-
-
-    let leftArrow = false;
-    let rightArrow = false;
     document.addEventListener('keydown', function (e) {
         if (e.keyCode == 37) {
             leftArrow = true
@@ -122,11 +103,9 @@ function ballPaddleCollision() {
         else if (e.keyCode == 39) {
             rightArrow = false;
             console.log("right")
-
-    
         }
     });
-    function movePaddle2() {
+    function movePaddle2() { //for paddle move with arrows
         if (rightArrow && player1.x + player1.width < canvas.width) {
             player1.x += player1.dx
     
@@ -137,16 +116,7 @@ function ballPaddleCollision() {
         }
     }
 
-
-
-
-
-
-
-
-
-    
-function movePaddle(){
+function movePaddle(){//for paddle move with mouse
     canvas.addEventListener("mousemove",function(e){
         let rect =canvas.getBoundingClientRect();
         if (e.clientX-rect.left<97){}
@@ -159,7 +129,7 @@ function movePaddle(){
     function rander(){
 
     ctx.reset();// to delete canvas contant
-    drawBall()
+    drawBall()// to create ball with new
     drawrect(player1.x,player1.y,player1.width,player1.height,player1.color)// create new canvas by new position
     }
     // rander()
@@ -179,7 +149,12 @@ function movePaddle(){
         setInterval(game,1000/fps)
 // =======
 
-
+window.addEventListener('resize', resizeCanvas, false);
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
 
 
 
