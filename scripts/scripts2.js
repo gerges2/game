@@ -11,12 +11,13 @@ const ballRadias = 8;
 const playerHeight=10;
 const playerWidth=100;
 let leftArrow = false;// for arror button
-let rightArrow = false;//for arror button 
+let rightArrow = false;//for arror button
+let move =false
 const ctx =canvas.getContext("2d");
 //opject of paddle 
 const player1 ={
-        x:canvas.width/2-playerWidth/2,
-        y :canvas.height-30,
+        x:window.innerWidth/2-playerWidth/2,
+        y :window.innerHeight-30,
         width:playerWidth,
         height:playerHeight,
         color:"blue",
@@ -28,17 +29,25 @@ const player1 ={
         x: canvas.width,
         y: player1.y-ballRadias,
         radius: ballRadias,
-        speed: 3,
-        dx: 3,
-        dy: 3,
+        speed:5,
+        dx: 5,
+        dy: 5,
     }
     // reset ball if drop ball 
     function resetBall() {
     ball.x = canvas.width / 2;
     ball.y = player1.y - ballRadias;
-    ball.dx = 2 * (Math.random() * 2 - 1)
-    ball.dy = -2
+    ball.dx = ball.speed * (Math.random() * 2 - 1)
+    ball.dy = -ball.speed
+    move =false
+    ball.speed=5
+    player1.x=window.innerWidth/2-playerWidth/2
+    player1.y =window.innerHeight-30
     }
+
+    canvas.addEventListener("click",function(){
+        move=true
+    })
 
     var count = 3;//number of lifes
     // collision ball with wall
@@ -119,9 +128,11 @@ function drawrect(x,y,w,h,color){
 function movePaddle(){//for paddle move with mouse
     canvas.addEventListener("mousemove",function(e){
         let rect =canvas.getBoundingClientRect();
-        if (e.clientX-rect.left<97){}
+
+        if (e.clientX-rect.left<97 && move== true){}
         else{
-        player1.x=e.clientX-rect.left-(player1.width);}   
+            if (move==true){
+        player1.x=e.clientX-rect.left-(player1.width);} }
     })//height of player is 100  
 }
      
@@ -134,14 +145,16 @@ function movePaddle(){//for paddle move with mouse
     }
     // rander()
     function update(){//to  update position of player(paddle)
+        // movePaddle()
+        // movePaddle2()
+        if (move == true){
         movePaddle()
         movePaddle2()
         moveBall()
+    }
         ballWallCollision()
         ballPaddleCollision()
     }
-    // movePaddle()
-    // movePaddle2()
     function game(){//to display frame by frame 
             update();
             rander();
