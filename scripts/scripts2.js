@@ -29,7 +29,7 @@ const player1 ={
         x: canvas.width,
         y: player1.y-ballRadias,
         radius: ballRadias,
-        speed:5,
+        speed:10,
         dx: 5,
         dy: 5,
     }
@@ -40,7 +40,7 @@ const player1 ={
     ball.dx = ball.speed * (Math.random() * 2 - 1)
     ball.dy = -ball.speed
     move =false
-    ball.speed=5
+    ball.speed=10
     player1.x=window.innerWidth/2-playerWidth/2
     player1.y =window.innerHeight-30
     }
@@ -72,7 +72,9 @@ function ballPaddleCollision() {
         point /= (player1.width / 2);
         let a = point * (Math.PI / 3);
         ball.dx = ball.speed * Math.sin(a)
+        console.log(ball.dx)
         ball.dy = - ball.speed * Math.cos(a)
+        console.log(ball.dy)
 
     }
 }
@@ -155,11 +157,11 @@ function movePaddle(){//for paddle move with mouse
         ballWallCollision()
         ballPaddleCollision()
     }
-    function game(){//to display frame by frame 
-            update();
-            rander();
-        }
-        setInterval(game,1000/fps)
+    // function game(){//to display frame by frame 
+    //         update();
+    //         rander();
+    //     }
+        // setInterval(game,1000/fps)
 // =======
 
 window.addEventListener('resize', resizeCanvas, false);
@@ -170,4 +172,15 @@ function resizeCanvas() {
 resizeCanvas();
 
 
+
+var animate = function () {
+
+    update();
+    rander();
+    
+    requestAnimationFrame(animate);
+
+}
+
+animate();
 
