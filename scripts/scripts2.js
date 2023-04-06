@@ -27,7 +27,7 @@ const player1 ={
     // ball attributes
     const ball = {
         x: canvas.width,
-        y: player1.y-ballRadias,
+        y: player1.y+playerWidth/2,
         radius: ballRadias,
         speed:10,
         dx: 5,
