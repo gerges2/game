@@ -1,5 +1,6 @@
 
-initBricks(canvas);
+initBricks(canvas,1);
+
 
 //to shows elemet in canvas  
 function render() {
@@ -11,8 +12,8 @@ function render() {
     drawBricks(ctx)
     
 }
-// rander()
-function update() {//to  update position of player(paddle)
+// render()
+function update() {//to  update position of paddle
 
     if (move == true) {
         movePaddle()
@@ -27,7 +28,7 @@ window.addEventListener('resize', resizeCanvas, false);
 function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-    initBricks(canvas);
+    initBricks(canvas,1);
     render();
 }
 resizeCanvas();
