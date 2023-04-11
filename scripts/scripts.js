@@ -14,7 +14,7 @@ const lifeImg = new Image();//life icon
 lifeImg.src = "./images/heart.png";
 
 // const levelImg = new Image();
-// levelImg.src = "./images/star.png";
+// levelImg.src = "./images/level-up.png";
 
 function showGameState(text,textX,textY, img,imgX,imgY){
   ctx.fillStyle ="red"
