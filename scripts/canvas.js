@@ -1,5 +1,6 @@
 // Action for Start Screen
 // span button
+let oldScore=0
 document.querySelector(".start-btn span").onclick = function () {
     let span = document.querySelector(".start-btn");
     span.remove();//remove span button when clicked
@@ -41,6 +42,19 @@ function load(time){
     // setInterval(timer, time);
     $(".overloading").fadeOut(4500);
     setInterval(timer, time);
+}
+function load2(time){
+    $(".overloading").fadeIn(1,function(){
+        ( $(".count").text(3));
+    })
+    count =3
+// fadeOut(speed,easing,callback)
+    $(".overloading").fadeOut(3000,function(){
+        play=false
+    });
+    setInterval(timer, time);
+
+    
 }
 
 function timer() {

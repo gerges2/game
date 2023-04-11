@@ -32,6 +32,7 @@ window.levels = [
 
 //Initialize bricks in the canvas
 function initBricks(canvas, levelIndex) {
+  levelIndex==0?oldScore=0:levelIndex==1?oldScore=15:oldScore=43
   const level = window.levels[levelIndex];
   brickRowCount = level.rowCount;
   brickColumnCount = level.columnCount;

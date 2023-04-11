@@ -13,8 +13,8 @@ scoreImg.src = "./images/laughing.png";
 const lifeImg = new Image();//life icon
 lifeImg.src = "./images/heart.png";
 
-// const levelImg = new Image();
-// levelImg.src = "./images/star.png";
+const levelImg = new Image();
+levelImg.src = "./images/star.png";
 
 function showGameState(text,textX,textY, img,imgX,imgY){
   ctx.fillStyle ="red"
@@ -49,7 +49,7 @@ function update() {
     if (play==true)return;
     drawIcons(); // Drawing Score & life
 
-    // drawtext (`score : `+ (score*20),80,70)
+    // drawtext (`score : `+ ((oldScore+score)*20),80,70)
     // drawtext (life,280,70)
     // ctx.drawImage('images/life.png', 10, 10, 150, 180);
 
@@ -84,9 +84,9 @@ pausebtn.addEventListener("click",function(){
     if(pausebtn.innerText=="play") 
     {
         
-        load(2000)
+        load2(2000)
         pausebtn.innerText="stop";
-        play=false
+        // play=false
 
         
     }
