@@ -14,7 +14,7 @@ const lifeImg = new Image();//life icon
 lifeImg.src = "./images/heart.png";
 
 const levelImg = new Image();
-levelImg.src = "./images/star.png";
+levelImg.src = "./images/level-up.png";
 
 function showGameState(text,textX,textY, img,imgX,imgY){
   ctx.fillStyle ="red"
@@ -27,7 +27,7 @@ function showGameState(text,textX,textY, img,imgX,imgY){
 function drawIcons(){
   showGameState((oldScore+score)*20,80,70,scoreImg,35,35);
   showGameState(life,canvas.width-40,70,lifeImg, canvas.width-85,40);
-  showGameState(levelIndex+1,canvas.width/2, 25, levelImg, canvas.width/2 - 30, 5);
+  showGameState(levelIndex+1,canvas.width/2, 70, levelImg, canvas.width/2 -40, 40);
 }
 //End Score & life 
 
