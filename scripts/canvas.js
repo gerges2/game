@@ -1,5 +1,6 @@
 // Action for Start Screen
 // span button
+let oldScore=0
 document.querySelector(".start-btn span").onclick = function () {
     let span = document.querySelector(".start-btn");
     span.remove();//remove span button when clicked

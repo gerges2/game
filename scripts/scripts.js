@@ -22,7 +22,7 @@ function update() {
   //to  update position of paddle
 
     if (play==true)return;
-    drawtext (`score : `+ (score*20),80,70)
+    drawtext (`score : `+ ((oldScore+score)*20),80,70)
     drawtext (life,280,70)
     // ctx.drawImage('images/life.png', 10, 10, 150, 180);
 
