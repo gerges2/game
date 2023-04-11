@@ -22,6 +22,7 @@ function update() {
     moveBall();
     ballWallCollision();
     ballPaddleCollision();
+    sounds.music.play();
   }
 }
 

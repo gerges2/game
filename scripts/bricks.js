@@ -87,9 +87,15 @@ function drawBricks(ctx) {
           brick.status -= 1; // decrement 1 from status
           score += 1 / BRICK_LIFE; //increase score
           brick.color = "#ff9800";
+          sounds.brick.play();//add brick sound
           if (score === brickRowCount * brickColumnCount) {
+            sounds.music.pause();
+            sounds.levelCompleted.play();//add winning sound
             alert("Congratulations! You win!");
             document.location.href = `/?level=${levelIndex + 1}`;
+            sounds.levelCompleted.play();//add winning sound
+            sounds.music.pause();
+
           }
         }
         ctx.beginPath();

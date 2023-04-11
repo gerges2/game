@@ -1,7 +1,9 @@
 // Action for Start Screen
 // span button
 document.querySelector(".start-btn span").onclick = function () {
-    document.querySelector(".start-btn").remove();
+    let span = document.querySelector(".start-btn");
+    span.remove();//remove span button when clicked
+    sounds.startSpanBtn.play(); //add start button sound
 }// to delete button
 // Get canvas element
 const canvas = document.getElementById("myCanvas");
@@ -15,3 +17,12 @@ canvas.addEventListener("click", function () {
     move = true
 })
 
+//Sounds Variables
+const sounds = {
+    startSpanBtn: new Audio('./sounds/start.wav'),
+    paddle: new Audio('./sounds/paddle.wav'),
+    gameOver: new Audio('./sounds/gameover.wav'),
+    brick: new Audio('./sounds/brick.wav'),
+    levelCompleted: new Audio('./sounds/win.wav'),
+    music: new Audio('./sounds/music.wav')
+}

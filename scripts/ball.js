@@ -78,5 +78,6 @@ function ballPaddleCollision() {
     let a = point * (Math.PI / 3);
     ball.dx = ball.speed * Math.sin(a);
     ball.dy = -ball.speed * Math.cos(a);
+    sounds.paddle.play();//add paddle sound
   }
 }
