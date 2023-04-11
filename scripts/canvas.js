@@ -23,7 +23,6 @@ canvas.addEventListener("click", function () {
 
 
 function drawtext (text,x,y){
-    ctx.fillStyle ="red"
     ctx.font ="30px fantasy"
     ctx.fillText(text,x,y)
 }
