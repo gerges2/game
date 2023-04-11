@@ -1,6 +1,6 @@
 const queryLevel = new URLSearchParams(window.location.search).get('level');
 const levelIndex = queryLevel ? Number(queryLevel) : 0;
-const MODE_DEV = true;
+const MODE_DEV = false;
 
 initBricks(canvas, levelIndex);
 
