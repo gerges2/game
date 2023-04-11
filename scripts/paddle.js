@@ -12,8 +12,8 @@ let move = false
 // Paddle Object
 
 const paddle = {
-    x: window.innerWidth / 2 - paddleWidth / 2,
-    y: window.innerHeight - 30,
+    x: canvas.width / 2 - paddleWidth / 2,
+    y: canvas.height - 30,
     width: paddleWidth,
     height: paddleHeight,
     color: "blue",

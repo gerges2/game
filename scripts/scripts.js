@@ -1,5 +1,8 @@
+const queryLevel = new URLSearchParams(window.location.search).get('level');
+const levelIndex = queryLevel ? Number(queryLevel) : 0;
+const MODE_DEV = true;
 
-initBricks(canvas,1);
+initBricks(canvas, levelIndex);
 
 
 //to shows elemet in canvas  
@@ -10,7 +13,7 @@ function render() {
     drawBall()// to create ball with new
     drawPaddle(paddle.x, paddle.y, paddle.width, paddle.height, paddle.color)// create new canvas by new position
     drawBricks(ctx)
-    
+
 }
 // render()
 function update() {//to  update position of paddle
@@ -19,27 +22,25 @@ function update() {//to  update position of paddle
         movePaddle()
         movePaddle2()
         moveBall()
+        ballWallCollision()
+        ballPaddleCollision()
     }
-    ballWallCollision()
-    ballPaddleCollision()
 }
 
 window.addEventListener('resize', resizeCanvas, false);
 function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-    initBricks(canvas,1);
-    render();
+    initBricks(canvas, levelIndex);
+    animate();
 }
+
+
 resizeCanvas();
 
+function animate() {
 
-var animate = function () {
-
-    update();
     render();
-    requestAnimationFrame(animate);
+    update();
+    animationId = requestAnimationFrame(animate);
 
 }
-animate();
 

@@ -4,13 +4,14 @@
 // Constant Variable
 const ballRadias = 8;
 let life = 3;
+let animationId = 0;
 
 //ball object
 const ball = {
-    x: canvas.width,
-    y: paddle.y + paddleWidth / 2,
+    x: canvas.width / 2,
+    y: paddle.y - ballRadias,
     radius: ballRadias,
-    speed: 5,
+    speed: 0,
     dx: 5,
     dy: 5,
 }
@@ -22,15 +23,16 @@ function resetBall() {
     ball.dx = ball.speed * (Math.random() * 2 - 1);
     ball.dy = -ball.speed;
     move = false;
-    ball.speed = 5;
-    paddle.x = window.innerWidth / 2 - paddleWidth / 2;
-    paddle.y = window.innerHeight - 30;
+    paddle.x = canvas.width / 2 - paddleWidth / 2;
+    paddle.y = canvas.height - 30;
+    
     // life-=1;
-    console.log(life);
+
     if (life === 0) {
       alert("Game over!");
+      life = 3;
+      // reset code here
       // Stop the game
-      cancelAnimationFrame(animationId); //animation
       return;
     }
   }
@@ -73,9 +75,7 @@ function ballPaddleCollision() {
         point /= (paddle.width / 2);
         let a = point * (Math.PI / 3);
         ball.dx = ball.speed * Math.sin(a)
-        console.log(ball.dx)
         ball.dy = - ball.speed * Math.cos(a)
-        console.log(ball.dy)
 
     }
 }
