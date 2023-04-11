@@ -48,6 +48,7 @@ function resetBall() {
     }
     if (ball.y + ball.radius > canvas.height) {
         life--;
+        // if(life===0) function to reset game , else 
         resetBall();// to return ball up paddle 
     }
 }

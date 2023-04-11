@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brick Break</title>
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/all.min.css">
   </head>
   <body>
     <!-- Start Canvas -->
@@ -18,12 +19,18 @@
         <span>Tap to Start</span>
     </div>
     <!-- End : Start screen -->
-
+    <button id ="pausebtn">stop</button>
+    <!-- <i  id ="life" class="fa-solid fa-heart" style="color: #c30912;"></i> -->
+    <img src="images/life.png"  id ="life">
+    <div class="overloading">
+      <span class="count"></span>
+    </div>
     <!-- JavaScript -->
     <script src="scripts/canvas.js"></script>
     <script src="scripts/paddle.js"></script>
     <script src="scripts/ball.js"></script>
     <script src="scripts/bricks.js"></script>
     <script src="scripts/scripts.js"></script>
-  </body>
+    <script src="scripts/jquery-3.6.4.js"></script>
+    </body>
 </html>
