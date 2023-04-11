@@ -91,7 +91,7 @@ function drawBricks(ctx) {
                     brick.color = "#ff9800"
                     if (score === brickRowCount * brickColumnCount) {
                         alert("Congratulations! You win!");
-                        document.location.href = `/?level=${levelIndex + 1}`
+                        document.location.href = `/?level=${levelIndex + 1}` 
                     }
                 }
                 ctx.beginPath();

@@ -3,6 +3,7 @@ const levelIndex = queryLevel ? Number(queryLevel) : 0;
 const MODE_DEV = false;// deveoper mode 
 let play=false;
 
+
 initBricks(canvas, levelIndex);
 
 

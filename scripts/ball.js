@@ -29,8 +29,11 @@ function resetBall() {
     // life-=1;
 
     if (life === 0) {
-      alert("Game over!");
+    //   alert("Game over!");
       life = 3;
+      initBricks(canvas, levelIndex)
+      score=0
+      document.location.href = `/?level=${0}`
       // reset code here
       // Stop the game
       return;
