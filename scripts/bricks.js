@@ -13,19 +13,19 @@ window.levels = [
   {
     rowCount: 3,
     columnCount: 5,
-    ballSpeed: 4,
+    ballSpeed: 2,
     paddleWidth: 120,
   },
   {
     rowCount: 4,
     columnCount: 7,
-    ballSpeed: 5,
+    ballSpeed: 3,
     paddleWidth: 100,
   },
   {
     rowCount: 5,
     columnCount: 10,
-    ballSpeed: 7,
+    ballSpeed: 4,
     paddleWidth: 80,
   },
 ];
@@ -92,7 +92,7 @@ function drawBricks(ctx) {
             sounds.music.pause();
             sounds.levelCompleted.play();//add winning sound
             alert("Congratulations! You win!");
-            document.location.href = `/?level=${levelIndex + 1}`;
+            document.location.href = `/?level=${levelIndex + 1}` ;
             sounds.levelCompleted.play();//add winning sound
             sounds.music.pause();
 
