@@ -6,6 +6,31 @@ let play=false;
 
 initBricks(canvas, levelIndex);
 
+//Start Score & life 
+const scoreImg = new Image();//score icon
+scoreImg.src = "./images/laughing.png";
+
+const lifeImg = new Image();//life icon
+lifeImg.src = "./images/heart.png";
+
+// const levelImg = new Image();
+// levelImg.src = "./images/star.png";
+
+function showGameState(text,textX,textY, img,imgX,imgY){
+  ctx.fillStyle ="red"
+  ctx.font ="30px fantasy"
+  ctx.fillStyle ="#fff";
+  ctx.font ="25px";
+  ctx.fillText(text,textX,textY);
+  ctx.drawImage(img, imgX, imgY, 40, 40);
+}
+function drawIcons(){
+  showGameState(score*20,80,70,scoreImg,35,35);
+  showGameState(life,canvas.width-40,70,lifeImg, canvas.width-85,40);
+  // showGameState(level,canvas.width/2, 25, levelImg, canvas.width/2 - 30, 5);
+}
+//End Score & life 
+
 
 
 
@@ -22,8 +47,10 @@ function update() {
   //to  update position of paddle
 
     if (play==true)return;
-    drawtext (`score : `+ (score*20),80,70)
-    drawtext (life,280,70)
+    drawIcons(); // Drawing Score & life
+
+    // drawtext (`score : `+ (score*20),80,70)
+    // drawtext (life,280,70)
     // ctx.drawImage('images/life.png', 10, 10, 150, 180);
 
   if (move == true) {
@@ -34,17 +61,6 @@ function update() {
     ballPaddleCollision();
     sounds.music.play();
   }
-    if (move == true) {
-        // drawtext (`score : `+ (score*20),120,30)
-        // drawtext (life,100,100)
-        console.log(score);
-        movePaddle()
-        
-        movePaddle2()
-        moveBall()
-        ballWallCollision()
-        ballPaddleCollision()
-    }
 }
 
 window.addEventListener("resize", resizeCanvas, false);
@@ -78,3 +94,4 @@ pausebtn.addEventListener("click",function(){
         pausebtn.innerText="play";
         play=true
     }})
+
