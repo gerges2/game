@@ -1,6 +1,6 @@
 const queryLevel = new URLSearchParams(window.location.search).get("level");
 const levelIndex = queryLevel ? Number(queryLevel) : 0;
-const MODE_DEV = true;// deveoper mode 
+const MODE_DEV = false;// deveoper mode 
 let play=false;
 
 
