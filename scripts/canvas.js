@@ -43,11 +43,22 @@ function load(time){
 
     
 }
-function timer() {
-    count == 0 ?count=count :count--
+function load2(time){
+    $(".overloading").fadeIn(1,function(){
+        ( $(".count").text(3));
+    })
+    count =3
+// fadeOut(speed,easing,callback)
+    $(".overloading").fadeOut(3000,function(){
+        play=false
+    });
+    setInterval(timer, time);
 
     
+}
 
+function timer() {
+    count == 0 ?count=count :count--
      $(".count").text(count);
 }
 

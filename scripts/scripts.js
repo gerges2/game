@@ -68,9 +68,9 @@ pausebtn.addEventListener("click",function(){
     if(pausebtn.innerText=="play") 
     {
         
-        load(2000)
+        load2(2000)
         pausebtn.innerText="stop";
-        play=false
+        // play=false
 
         
     }
