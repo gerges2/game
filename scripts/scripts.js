@@ -25,9 +25,9 @@ function showGameState(text,textX,textY, img,imgX,imgY){
   ctx.drawImage(img, imgX, imgY, 40, 40);
 }
 function drawIcons(){
-  showGameState(score*20,80,70,scoreImg,35,35);
+  showGameState((oldScore+score)*20,80,70,scoreImg,35,35);
   showGameState(life,canvas.width-40,70,lifeImg, canvas.width-85,40);
-  // showGameState(level,canvas.width/2, 25, levelImg, canvas.width/2 - 30, 5);
+  showGameState(levelIndex+1,canvas.width/2, 25, levelImg, canvas.width/2 - 30, 5);
 }
 //End Score & life 
 
