@@ -23,10 +23,13 @@ canvas.addEventListener("click", function () {
 
 
 function drawtext (text,x,y){
-    ctx.fillStyle ="red"
-    ctx.font ="30px fantasy"
-    ctx.fillText(text,x,y)
+    ctx.fillStyle ="red";
+    ctx.font ="italic bold 36px Arial";
+    ctx.textAlign = "center"; // center the text horizontally
+    ctx.textBaseline = "middle"; // center the text vertically
+    ctx.fillText(text,x,y);
 }
+
 
 
 
@@ -35,18 +38,13 @@ function load(time){
         ( $(".count").text(3));
     })
     count =3
-
     // setInterval(timer, time);
     $(".overloading").fadeOut(4500);
     setInterval(timer, time);
-
-    
 }
+
 function timer() {
     count == 0 ?count=count :count--
-
-    
-
      $(".count").text(count);
 }
 
