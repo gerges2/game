@@ -58,9 +58,17 @@ function load2(time){
 }
 
 function timer() {
-    count == 0 ?count=count :count--
-     $(".count").text(count);
+    count == 0 ? count=count : count--;
+     $(".count").text(count).css({
+        "color": "white",
+        "text-shadow": "0px 0px 5px #e00000",
+        "box-shadow": "0px 0px 10px #e00000"
+    });
 }
+
+
+
+
 
 //Sounds Variables
 const sounds = {
